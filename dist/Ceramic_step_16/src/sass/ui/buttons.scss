@@ -1,0 +1,120 @@
+@use "/src/sass/base/mixins.scss" as *;
+@use "/src/sass/base/variables.scss" as *;
+
+.btn-default {
+	@include button;
+	width: 230px;
+	height: 50px;
+	font-size: 20px;
+}
+
+.btn-send {
+	@include button;
+	width: 220px;
+	height: 40px;
+	font-size: 16px;
+	&:focus {
+		outline: 1px solid $ceramic;
+		border: 1px solid $ceramic;
+	}
+	&:disabled {
+		color: $ui-disabled;
+		border: 1px solid $ui-disabled;
+	}
+}
+
+.btn-submit {
+	@include button;
+	width: 120px;
+	min-height: 45px;
+	height: auto;
+	font-size: 16px;
+	line-height: 1.2;
+	padding: 10px 15px;
+	color: $light;
+	border: 1px solid $light;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	white-space: nowrap;
+	&:disabled {
+		color: $ui-disabled;
+		border: 1px solid $ui-disabled;
+	}
+}
+
+.btn-read {
+	@include button;
+	width: 145px;
+	height: 32px;
+	font-size: 14px;
+	&:focus {
+		outline: 1px solid $ceramic;
+		border: 1px solid $ceramic;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.btn-default {
+		&:hover {
+			background-color: $dark;
+			color: $light;
+		}
+		&:active {
+			background: rgba(217, 217, 217, 0.1);
+			box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4) inset;
+			color: $dark;
+			border: none;
+		}
+	}
+	.btn-send {
+		&:active {
+			outline: 1px solid $ceramic;
+			border: 1px solid $ceramic;
+		}
+		&:hover {
+			color: $ceramic;
+			border: 1px solid $ceramic;
+		}
+		&:disabled {
+			opacity: 0.6;
+			cursor: not-allowed;
+			&:hover {
+				color: $dark;
+				border: 1px solid $dark;
+			}
+		}
+	}
+	.btn-submit {
+		&:hover {
+			background-color: $light;
+			color: $dark;
+		}
+		&:disabled {
+			opacity: 0.6;
+			cursor: not-allowed;
+			&:hover {
+				background-color: transparent;
+				color: $ui-disabled;
+			}
+		}
+	}
+	.btn-read {
+		&:active {
+			outline: 1px solid $ceramic;
+			border: 1px solid $ceramic;
+		}
+		&:hover {
+			color: $ceramic;
+			border: 1px solid $ceramic;
+		}
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.btn-default {
+		width: 330px;
+		height: 60px;
+	}
+}
